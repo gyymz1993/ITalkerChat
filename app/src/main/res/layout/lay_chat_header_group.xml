@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CollapsingToolbarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/collapsingToolbarLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/trans"
+    app:collapsedTitleTextAppearance="@style/TextAppearance.Title"
+    app:contentScrim="@color/colorAccent"
+    app:expandedTitleGravity="bottom|center_horizontal"
+    app:expandedTitleMarginBottom="@dimen/len_16"
+    app:expandedTitleTextAppearance="@style/TextAppearance.Title"
+    app:title="@string/app_name"
+    app:toolbarId="@id/toolbar">
+
+    <ImageView
+        android:id="@+id/im_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_128"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        android:src="@drawable/default_banner_chat"
+        app:layout_collapseMode="parallax"
+        app:layout_collapseParallaxMultiplier="0.7" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionBarWithStatusBarSize"
+        android:paddingTop="@dimen/statusBarSize"
+        app:layout_collapseMode="pin" />
+
+    <LinearLayout
+        android:id="@+id/lay_members"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_collapseMode="parallax"
+        app:layout_collapseParallaxMultiplier="0.3">
+
+        <TextView
+            android:id="@+id/txt_member_more"
+            android:layout_width="@dimen/len_32"
+            android:layout_height="@dimen/len_32"
+            android:layout_margin="1dp"
+            android:background="@drawable/sel_bg_clr_32"
+            android:gravity="center"
+            android:padding="@dimen/len_2"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            tools:text="+1" />
+
+    </LinearLayout>
+
+</android.support.design.widget.CollapsingToolbarLayout>

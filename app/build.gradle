@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "net.qiujuer.italker.push"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //个推相关参数
+        manifestPlaceholders = [
+                GETUI_APP_ID    : "Rr51sROK4B8FXbq0TUjAF5",
+                GETUI_APP_KEY   : "eurxTdqHECAKgc7s4xtUe9",
+                GETUI_APP_SECRET: "wvAHiSQwuJ79Fp1tBy8Td8",
+                PACKAGE_NAME    : applicationId
+        ]
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    compile project(':factory')
+
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.supportVersion"
+    compile "com.android.support:design:$rootProject.ext.supportVersion"
+
+    compile "net.qiujuer.genius:ui:$rootProject.ext.geniusVersion"
+    compile "net.qiujuer.genius:res:$rootProject.ext.geniusVersion"
+
+    compile "de.hdodenhof:circleimageview:$rootProject.ext.circleimageviewVersion"
+    compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+
+    compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
+
+    compile "com.yalantis:ucrop:$rootProject.ext.ucropVersion"
+    compile "pub.devrel:easypermissions:$rootProject.ext.easyPMVersion"
+
+    // 个推
+    compile "com.getui:sdk:$rootProject.ext.getuiVersion"
+    // 空气面板
+    compile "net.qiujuer.widget:airpanel:$rootProject.ext.airpanelVersion"
+
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:support-v4:25.3.1'
+}

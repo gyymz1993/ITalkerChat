@@ -1,0 +1,114 @@
+<net.qiujuer.italker.common.widget.MessageLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lay_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="net.qiujuer.italker.push.frags.message.ChatUserFragment">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/trans">
+
+            <!--顶部布局的占位-->
+            <ViewStub
+                android:id="@+id/view_stub_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap" />
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/len_8"
+            android:paddingTop="@dimen/len_8"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </android.support.design.widget.CoordinatorLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_alpha_224"
+        android:elevation="2dp"
+        android:orientation="horizontal"
+        android:outlineProvider="bounds"
+        tools:targetApi="lollipop">
+
+        <ImageView
+            android:id="@+id/btn_face"
+            android:layout_width="@dimen/len_44"
+            android:layout_height="@dimen/len_44"
+            android:contentDescription="@string/app_name"
+            android:enabled="true"
+            android:foreground="@drawable/ic_touch_fg"
+            android:padding="@dimen/len_8"
+            android:src="@drawable/ic_emoji"
+            android:tint="@color/textPrimary" />
+
+        <ImageView
+            android:id="@+id/btn_record"
+            android:layout_width="@dimen/len_44"
+            android:layout_height="@dimen/len_44"
+            android:contentDescription="@string/app_name"
+            android:enabled="true"
+            android:foreground="@drawable/ic_touch_fg"
+            android:padding="@dimen/len_8"
+            android:src="@drawable/ic_record"
+            android:tint="@color/textPrimary" />
+
+        <EditText
+            android:id="@+id/edit_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="@string/label_chat_edit_hint"
+            android:lineSpacingExtra="0dp"
+            android:lineSpacingMultiplier="1"
+            android:maxHeight="@dimen/len_68"
+            android:minHeight="@dimen/len_44"
+            android:padding="@dimen/len_4"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/textPrimary"
+            android:textColorHint="@color/textSecond"
+            android:textCursorDrawable="@drawable/ic_cursor" />
+
+        <ImageView
+            android:id="@+id/btn_submit"
+            android:layout_width="@dimen/len_44"
+            android:layout_height="@dimen/len_44"
+            android:contentDescription="@string/app_name"
+            android:enabled="true"
+            android:foreground="@drawable/ic_touch_fg"
+            android:padding="@dimen/len_8"
+            android:src="@drawable/ic_submit"
+            android:tint="@color/textPrimary" />
+    </LinearLayout>
+
+    <!--id是固定的airPanelSubLayout-->
+    <net.qiujuer.widget.airpanel.AirPanelFrameLayout
+        android:id="@id/airPanelSubLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_alpha_224"
+        android:visibility="gone">
+
+        <fragment
+            android:id="@+id/frag_panel"
+            class="net.qiujuer.italker.push.frags.panel.PanelFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </net.qiujuer.widget.airpanel.AirPanelFrameLayout>
+</net.qiujuer.italker.common.widget.MessageLayout>

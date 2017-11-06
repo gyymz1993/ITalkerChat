@@ -1,0 +1,45 @@
+<resources>
+
+    <style name="Theme.private" parent="Theme.AppCompat">
+        <!-- 复写3个主要的色彩. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Genius style -->
+        <item name="gTextViewStyle">@style/Genius.Widget.TextView</item>
+        <item name="gButtonStyle">@style/Genius.Widget.Button</item>
+        <item name="gFloatActionButtonStyle">@style/Genius.Widget.FloatActionButton</item>
+        <item name="gSeekBarStyle">@style/Genius.Widget.SeekBar</item>
+        <item name="gCheckBoxStyle">@style/Genius.Widget.CompoundButton.CheckBox</item>
+        <item name="gEditTextStyle">@style/Genius.Widget.EditText</item>
+        <item name="gLoadingStyle">@style/Genius.Widget.Loading</item>
+        <item name="gImageViewStyle">@style/Genius.Widget.ImageView</item>
+
+        <!--背景色-->
+        <item name="android:windowBackground">@color/windowsBackground</item>
+
+        <!--设置没有Title-->
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+        <!--ToolBar高度-->
+        <item name="actionBarSize">@dimen/len_48</item>
+        <!-- 左上角返回Icon -->
+        <item name="homeAsUpIndicator">@drawable/ic_back</item>
+
+        <!--初始化自己定义的3个属性值-->
+        <item name="toolbarTitleSize">@dimen/font_18</item>
+        <item name="toolbarTitleColor">@color/white_alpha_224</item>
+        <item name="toolbarMenuIconColor">@color/white_alpha_224</item>
+
+    </style>
+
+    <style name="AppTheme.Base" parent="Theme.private" />
+
+    <style name="AppTheme.Dialog.Alert.Light" parent="Base.Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+</resources>
